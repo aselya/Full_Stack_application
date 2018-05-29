@@ -1,0 +1,84 @@
+
+
+Summer 2018 CS473/673 Project Description 1
+CS473/673 Software Engineering Project
+Summer 2018
+
+Project Description
+In this course, students will work collaboratively on a real-world semester-long project:
+a project management tool, preferably as a web-based application. The project
+management tool should support agile-like iterative process. The tool is intended to be
+used in the academic setting for group-based class projects or research projects. The
+tool shall have the following three relatively independent components.
+1. Project requirement management tool to manage software requirements (such
+as user stories) and related tasks. (similar software: Trello)
+2. Project communication tool to facilitate the communication between members
+such as a virtual chatting room. (similar software: slack, discussion board)
+3. Issue management tool to manage the issues or bugs in the project. (similar
+software: issue tracking in github)
+Since currently we have about 30 students in the class, we will divide into 5 teams of six
+each, working in parallel. To coordinate the group work, each group will have a group
+leader and a backup leader. Every member of the team is expected to contribute a
+roughly equal share to the project throughout the whole process. The single biggest
+determinant of success or failure of a project are the people on your team. Respect your
+fellow team members. Commitment to the team is the key.
+The instructor will also act as the customer of the project. Initially the customer will only
+have a vague project idea. The teams will interact with the customer in order to figure
+out what the customer want and deliver what the customer wants. The payment will
+not be dollars, but your grades. 
+Project Process Description
+While several different software development models will be introduced in the lectures,
+this project will mainly adopt an iterative and incremental development process . We
+will focus on some agile software development methodologies, but also introduce nonagile
+approaches and incorporate some into our project as needed. We will have an
+initial planning phase, and then three iterations. Each iteration will produce a working
+software, and each iteration is a mini-project, involving planning, requirement analysis,
+design, coding, and testing. A short presentation with a demo will be required at the end
+of each iteration in order to get the feedback from the customer.
+Summer 2018 CS473/673 Project Description 2
+We will leave about 30 minutes in each class to discuss any issues in project. Each team
+should have one or two additional weekly meetings. These meetings may be in person
+on on-line. Meeting minutes are required for each. Students should also communicate
+with each other through email, phone calls, informal meetings for any questions and
+issues. Each student should also submit a weekly status report that records the progress
+in each week, plan for the next week and any issues encounter. Meeting minutes and
+weekly report can be shared through Google drive.
+Initial Planning Phase
+1. Meet with your teammates, designate team leaders, other leader roles and
+responsibilities for each role as you see fit. Set up communication a plan.
+2. Brainstorm the requirements of the project with the customer. Define the
+project title and a project vision, including purpose of the application, major
+functionalities and requirements etc. Research related work, describe the
+challenges, explore feasibility and learn tools. We will use pivotaltracker
+(http://www.pivotaltracker.com) or Trello (http://trello.com) as the requirement
+analysis tool.
+3. Set up project environment which include management tool, development
+environment. . We will use GIT as version control tool and github
+(https://github.com) to host your project. All documents and code files should be
+configuration items and stored in your version control system.
+4. Identify risks and risk retirement plan. Estimate the time and prepare an initial
+schedule of iterations. Define quality metrics and techniques.
+In Each Iteration
+1. Planning and Requirement analysis: work with the customer to prioritize the
+requirements from the backlog and choose the most important ones to
+implement in the current iteration. It is possible to get new requirements from
+the customer too. Analyze each requirement; write user stories, the acceptance
+test for each requirement. Break down into tasks, and estimate the time for each
+task and/or requirement based experience or the previous iteration. Do the
+detailed schedule for the current iteration and coarse granularity schedule for
+later iterations.
+2. Design, implementation and testing: identify design goals, choose the proper
+architecture. Identify objects/classes and their attributes and operations. Apply
+design patterns to enhance re-usability if applicable. Refactor code on a regular
+basis. Apply coding standards across the team, and document source code. You
+can use tool such as Javadoc to generate API documentation from the
+documented source code files. Test should be in parallel with implementation.
+This involves unit testing, integration testing, system testing and acceptance
+testing. Each iteration should result in working software that passed all tests. 
+Summer 2018 CS473/673 Project Description 3
+3. All code and documentation should be peer reviewed at the end of each
+iteration.
+4. Submission: presentation (with demo), final deployment of your software,
+requirement analysis on pivotaltracker, updated documents (weekly report,
+meeting minutes), as well as source code (production and test code) on github.
+Post iteration self and peer reviews.
