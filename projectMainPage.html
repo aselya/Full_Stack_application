@@ -1,0 +1,105 @@
+<html lang="en"; >
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Aaron Selya" />
+	<link rel="stylesheet" type="text/css" href="../take2/take2.css">
+	<title>PM-Tool</title>
+</head>
+
+
+
+
+
+
+<body>
+
+	<ul class="mainMenuClass">
+	  <li class="mainMenuClassLi"><a href="default.asp">Home</a></li>
+	  <li class="mainMenuClassLi"><a href="Project.asp">Project</a></li>
+	  <li class="mainMenuClassLi"><a href="Communication.asp">Communication</a></li>
+	  <li class="mainMenuClassLi"><a href="Issue.asp">Issue Management</a></li>
+	</ul>
+
+
+
+
+
+
+
+<div id="app"></div>
+</body>
+
+
+<script>
+
+const projectListArray = [
+  {
+    name: "Project 1",
+    typeOfProject: "DeskTop App",
+    requirements: ["Desktop Environment", "Good Idea", "Teamwork"],
+    startDate: 2016,
+    currentStatus: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCac9PWPqbDzrr6pgHTkN0QISNX7xOFclUb7kMmDsIdTlZfa1"
+  },
+  {
+    name: "Project 2",
+    typeOfProject: "Mobile",
+    requirements: ["Apple vs Android", "Tablet vs Phone", "Teamwork"],
+
+    startDate: 2008,
+    currentStatus: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCac9PWPqbDzrr6pgHTkN0QISNX7xOFclUb7kMmDsIdTlZfa1"
+  },
+  {
+    name: "Self Improvement",
+    typeOfProject: "Personal",
+    requirements: ["Motivation", "Persistance", "Support"],
+    startDate: 2012,
+    currentStatus: "https://image.shutterstock.com/image-photo/diagonal-symbol-watercolor-yellow-arrow-260nw-1079719880.jpg"
+  }
+];
+
+function age(startDate) {
+  let calculatedAge = new Date().getFullYear() - startDate;
+  if (calculatedAge == 1) {
+    return "1 year old Project";
+  } else if (calculatedAge == 0) {
+    return "New Project";
+  } else {
+    return `${calculatedAge} years old`;
+  }
+}
+
+function requirements(requirements) {
+  return `
+<h4>Requirements</h4>
+<ul class="requirements-list">
+${requirements.map(requirements => `<li>${requirements}</li>`).join("")}
+</ul>
+`;
+}
+
+function projectTemplate(project) {
+  return `
+<li>
+		<div class="project">
+    <img class="project-currentStatus" src="${project.currentStatus}">
+    <h2 class="project-name">${project.name} <span class="typeOfProject">(${project.typeOfProject})</span></h2>
+    <p><strong>Age:</strong> ${age(project.startDate)}</p>
+    ${project.requirements ? requirements(project.requirements) : ""}
+    </div>
+		</li>
+  `;
+}
+
+document.getElementById("app").innerHTML = `
+  <h1 class="app-title">Projects (${projectListArray.length} results)</h1>
+	<div class="projectULlistTable"><ul class="projectULlist">
+  ${projectListArray.map(projectTemplate).join("")}}
+	<li><div class="project">Click To Start A New Project</li>
+	</ul>
+	</div>
+  <p class="footer">These ${projectListArray.length} projects were added recently. Check back soon for updates.</p>
+`;
+
+
+
+</script>
