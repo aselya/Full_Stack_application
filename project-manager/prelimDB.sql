@@ -27,7 +27,10 @@ CREATE TABLE `completionlevel` (
   `levelname` tinytext,
   `levelorder` int(11) DEFAULT NULL,
   `levelcomplete` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+  `projectID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `projectID` (`projectID`),
+  CONSTRAINT `completionlevel_ibfk_1` FOREIGN KEY (`projectID`) REFERENCES `project` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,7 +82,9 @@ CREATE TABLE `task` (
   `duedate` date DEFAULT NULL,
   `complete` tinyint(1) DEFAULT NULL,
   `level` int(11) NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  KEY `level` (`level`),
+  CONSTRAINT `task_ibfk_1` FOREIGN KEY (`level`) REFERENCES `completionlevel` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -101,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-06  3:09:36
+-- Dump completed on 2018-06-07  3:34:59
