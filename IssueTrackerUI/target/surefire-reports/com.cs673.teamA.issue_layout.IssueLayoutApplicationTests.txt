@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.cs673.teamA.issue_layout.IssueLayoutApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.117 s <<< FAILURE! - in com.cs673.teamA.issue_layout.IssueLayoutApplicationTests
+initializationError(com.cs673.teamA.issue_layout.IssueLayoutApplicationTests)  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+
