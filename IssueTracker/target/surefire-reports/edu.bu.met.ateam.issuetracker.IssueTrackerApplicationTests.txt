@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.bu.met.ateam.issuetracker.IssueTrackerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.967 s - in edu.bu.met.ateam.issuetracker.IssueTrackerApplicationTests

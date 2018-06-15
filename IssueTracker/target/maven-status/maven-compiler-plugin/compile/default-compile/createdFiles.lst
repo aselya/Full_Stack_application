@@ -1,0 +1,10 @@
+edu\bu\met\ateam\issuetracker\Project.class
+edu\bu\met\ateam\issuetracker\Issue.class
+edu\bu\met\ateam\issuetracker\MainController.class
+edu\bu\met\ateam\issuetracker\Comment.class
+edu\bu\met\ateam\issuetracker\ProjectRepository.class
+edu\bu\met\ateam\issuetracker\Priority.class
+edu\bu\met\ateam\issuetracker\UserRepository.class
+edu\bu\met\ateam\issuetracker\IssueRepository.class
+edu\bu\met\ateam\issuetracker\IssueTrackerApplication.class
+edu\bu\met\ateam\issuetracker\User.class
