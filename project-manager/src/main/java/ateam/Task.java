@@ -10,20 +10,20 @@ import java.util.Date;
 public class Task{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer ID;
+	private Long id;
 	private String taskname;
 	private Integer taskorder;
 	private String notes;
-	private Integer userassignment;
+	private Long userassignment;
 	private Date duedate;
 	private Boolean complete;
-	private Integer level;
+	private Long level;
 	
-	public Integer getId(){
-		return ID;
+	public Long getId(){
+		return id;
 	}
-	public void setId(Integer ID){
-		this.ID=ID;
+	public void setId(Long id){
+		this.id=id;
 	}
 	public String getTaskname(){
 		return taskname;
@@ -43,10 +43,10 @@ public class Task{
 	public void setNotes(String notes){
 		this.notes=notes;
 	}
-	public Integer getUserassignment(){
+	public Long getUserassignment(){
 		return userassignment;
 	}
-	public void setUserassignment(Integer userassignment){
+	public void setUserassignment(Long userassignment){
 		this.userassignment=userassignment;
 	}
 	public Date getDuedate(){
@@ -61,10 +61,10 @@ public class Task{
 	public void setComplete(Boolean complete){
 		this.complete=complete;
 	}
-	public Integer getLevel(){
+	public Long getLevel(){
 		return level;
 	}
-	public void setLevel(Integer level){
+	public void setLevel(Long level){
 		this.level=level;
 	}
 }

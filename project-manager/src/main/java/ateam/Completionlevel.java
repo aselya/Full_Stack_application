@@ -10,16 +10,16 @@ import java.util.Date;
 public class Completionlevel{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer ID;
+	private Long id;
 	private String levelname;
 	private Integer levelorder;
 	private Boolean levelcomplete;
-	private Integer projectID;
-	public Integer getId(){
-		return ID;
+	private Long projectID;
+	public Long getId(){
+		return id;
 	}
-	public void setId(Integer ID){
-		this.ID=ID;
+	public void setId(Long ID){
+		this.id=id;
 	}
 	public String getLevelname(){
 		return levelname;
@@ -39,10 +39,10 @@ public class Completionlevel{
 	public void setLevelcomplete(Boolean levelcomplete){
 		this.levelcomplete=levelcomplete;
 	}
-	public Integer getProjectid(){
+	public Long getProjectid(){
 		return projectID;
 	}
-	public void setProjectid(Integer Projectid){
+	public void setProjectid(Long Projectid){
 		this.projectID=projectID;
 	}
 }

@@ -9,19 +9,26 @@ import java.util.Date;
 @Entity
 public class Project{
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer ID;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	private String projectname;
-	public Integer getId(){
-		return ID;
+	private Integer createuser;
+	public Long getId(){
+		return id;
 	}
-	public void setId(Integer ID){
-		this.ID=ID;
+	public void setId(Long id){
+		this.id=id;
 	}
 	public String getProjectname(){
 		return projectname;
 	}
 	public void setProjectname(String projectname){
 		this.projectname=projectname;
+	}
+	public Integer getCreateuser(){
+		return createuser;
+	}
+	public void setCreateuser(Integer createuser){
+		this.createuser=createuser;
 	}
 }
