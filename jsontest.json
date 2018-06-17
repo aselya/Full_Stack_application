@@ -1,0 +1,24 @@
+[
+  {
+    name: "Project 1",
+    typeOfProject: "DeskTop App",
+    requirements: ["Desktop Environment", "Good Idea", "Teamwork"],
+    startDate: 2016,
+    currentStatus: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCac9PWPqbDzrr6pgHTkN0QISNX7xOFclUb7kMmDsIdTlZfa1"
+  },
+  {
+    name: "Project 2",
+    typeOfProject: "Mobile",
+    requirements: ["Apple vs Android", "Tablet vs Phone", "Teamwork"],
+
+    startDate: 2008,
+    currentStatus: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCac9PWPqbDzrr6pgHTkN0QISNX7xOFclUb7kMmDsIdTlZfa1"
+  },
+  {
+    name: "Self Improvement",
+    typeOfProject: "Personal",
+    requirements: ["Motivation", "Persistance", "Support"],
+    startDate: 2012,
+    currentStatus: "https://image.shutterstock.com/image-photo/diagonal-symbol-watercolor-yellow-arrow-260nw-1079719880.jpg"
+  }
+];
