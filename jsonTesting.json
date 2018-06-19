@@ -1,8 +1,8 @@
 {
-  "TeamName" : "Super hero squad",
-  "location" : "Metro City",
+  "TeamName" : "Team 1",
+  "location" : "Boston",
   "formed" : 2018,
-  "secretBase" : "Super tower",
+  "secretBase" : "CAS 232",
   "active" : true,
   "members" : [
     {
