@@ -6,13 +6,43 @@
   "active" : true,
   "members" : [
     {
-      "projectName" : "Project 1",
+      "projectName" : "Project Managment Tool",
       "age" : 29,
-      "projectMembers" : "Dan Jukes",
+      "projectMembers" : "Thomas and Aaron",
       "requirements" : [
-        "Radiation resistance",
-        "Turning tiny",
-        "Radiation blast"
+        "Make Database",
+        "Make Frontend",
+        "Combine"
+      ]
+    },
+    {
+      "projectName" : "Communication",
+      "age" : 2,
+      "projectMembers" : "Haoran",
+      "requirements" : [
+        "Get It Working",
+        "Choose Framework",
+        "Move to web"
+      ]
+    },
+    {
+      "projectName" : "Issue Managment",
+      "age" : 1,
+      "projectMembers" : "I-Yang and Alex",
+      "requirements" : [
+        "Find Issues",
+        "Heroku ",
+        "Make it work"
+      ]
+    },
+    {
+      "projectName" : "Managment Tool",
+      "age" : 0,
+      "projectMembers" : "Alex, I-Yang, Haoran, Thomas and Aaron",
+      "requirements" : [
+        "Work as Team",
+        "Get Components working",
+        "combine the apps"
       ]
     }
       ]
