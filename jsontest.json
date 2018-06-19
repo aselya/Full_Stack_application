@@ -38,7 +38,7 @@
       ]
     },
     {
-      "name" : "Molecule Man",
+      "name" : "Molecule Man2",
       "age" : 29,
       "secretIdentity" : "Dan Jukes",
       "powers" : [
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "name" : "Madame Uppercut",
+      "name" : "Madame Uppercut2",
       "age" : 39,
       "secretIdentity" : "Jane Wilson",
       "powers" : [
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "name" : "Eternal Flame",
+      "name" : "Eternal Flame2",
       "age" : 1000000,
       "secretIdentity" : "Unknown",
       "powers" : [
