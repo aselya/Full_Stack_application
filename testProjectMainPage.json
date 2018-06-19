@@ -1,71 +1,72 @@
 {
-  "headerName" : "Project Main Page",
-  "teamName" : "Team 1",
-  "started" : 2018,
-  "secretBase" : "CS 323",
+  "squadName" : "Project Managment",
+  "homeTown" : "CS class",
+  "formed" : 2018,
+  "secretBase" : "CAS,
   "active" : true,
-  "project" : [
+  "members" : [
     {
-      "name" : "Project 1",
-      "age" : 1,
-      "teamMembers" : "Aaron and Thomas",
-      "requirements" : [
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Molecule Man",
+      "age" : 29,
+      "secretIdentity" : "Dan Jukes",
+      "powers" : [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
       ]
     },
     {
-      "name" : "Project 2",
-      "age" : 1,
-      "teamMembers" : "Aaron and Thomas",
-      "requirements" : [
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Madame Uppercut",
+      "age" : 39,
+      "secretIdentity" : "Jane Wilson",
+      "powers" : [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
       ]
     },
     {
-      "name" : "Project 3",
-      "age" : 1,
-      "teamMembers" : "Aaron and Thomas",
-      "requirements" : [
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Eternal Flame",
+      "age" : 1000000,
+      "secretIdentity" : "Unknown",
+      "powers" : [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
       ]
     },
     {
-      "name" : "Project 4",
-      "age" : 1,
-      "teamMembers" : "Aaron and Thomas",
-      "requirements" : [
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Molecule Man2",
+      "age" : 29,
+      "secretIdentity" : "Dan Jukes",
+      "powers" : [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
       ]
     },
     {
-      "name" : "Project 1",
-      "age" : 1,
-      "teamMembers": "Aaron and Thomas",
-      "requirements": [
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Madame Uppercut2",
+      "age" : 39,
+      "secretIdentity" : "Jane Wilson",
+      "powers" : [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
       ]
     },
     {
-      "name" : "Project 5",
-      "age" : 1,
-      "teamMembers" : "Aaron and Thomas",
-      "requirements" : [
-        "First Step",
-        "Second Step",
-        "3rd step",
-        "First Step",
-        "Second Step",
-        "3rd step"
+      "name" : "Eternal Flame2",
+      "age" : 1000000,
+      "secretIdentity" : "Unknown",
+      "powers" : [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
       ]
     }
   ]
