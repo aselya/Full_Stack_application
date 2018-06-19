@@ -1,0 +1,71 @@
+{
+  "headerName": "Project Main Page",
+  "teamName": "Team 1",
+  "started": 2018,
+  "secretBase": "CS 323",
+  "active": true,
+  "project": [
+    {
+      "name": "Project 1",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    },
+    {
+      "name": "Project 2",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    },
+    {
+      "name": "Project 3",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    },
+    {
+      "name": "Project 4",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    },
+    {
+      "name": "Project 1",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    },
+    {
+      "name": "Project 5",
+      "age": 1,
+      "teamMembers": "Aaron and Thomas",
+      "requirements": [
+        "First Step",
+        "Second Step",
+        "3rd step","First Step",
+        "Second Step",
+        "3rd step"
+      ]
+    }
+  ]
+}
