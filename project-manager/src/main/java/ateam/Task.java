@@ -1,8 +1,10 @@
+//Comment
 package ateam;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+//Comment
 import javax.persistence.Id;
 import java.util.Date;
 
@@ -10,19 +12,19 @@ import java.util.Date;
 public class Task{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 	private String taskname;
 	private Integer taskorder;
 	private String notes;
-	private Long userassignment;
+	private Integer userassignment;
 	private Date duedate;
 	private Boolean complete;
-	private Long level;
+	private Integer level;
 	
-	public Long getId(){
+	public Integer getId(){
 		return id;
 	}
-	public void setId(Long id){
+	public void setId(Integer id){
 		this.id=id;
 	}
 	public String getTaskname(){
@@ -43,10 +45,10 @@ public class Task{
 	public void setNotes(String notes){
 		this.notes=notes;
 	}
-	public Long getUserassignment(){
+	public Integer getUserassignment(){
 		return userassignment;
 	}
-	public void setUserassignment(Long userassignment){
+	public void setUserassignment(Integer userassignment){
 		this.userassignment=userassignment;
 	}
 	public Date getDuedate(){
@@ -61,10 +63,10 @@ public class Task{
 	public void setComplete(Boolean complete){
 		this.complete=complete;
 	}
-	public Long getLevel(){
+	public Integer getLevel(){
 		return level;
 	}
-	public void setLevel(Long level){
+	public void setLevel(Integer level){
 		this.level=level;
 	}
 }

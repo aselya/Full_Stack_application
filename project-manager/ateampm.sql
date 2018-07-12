@@ -85,7 +85,7 @@ CREATE TABLE `task` (
   `level` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_level` (`level`),
-  CONSTRAINT `fk_level` FOREIGN KEY (`level`) REFERENCES `completionlevel` (`id`) ON DELETE CASCADE;
+  CONSTRAINT `fk_level` FOREIGN KEY (`level`) REFERENCES `completionlevel` (`id`) ON DELETE CASCADE);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

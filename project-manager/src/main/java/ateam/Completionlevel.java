@@ -4,21 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class Completionlevel{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 	private String levelname;
 	private Integer levelorder;
 	private Boolean levelcomplete;
-	private Long projectID;
-	public Long getId(){
+	private Integer projectID;
+	public Integer getId(){
 		return id;
 	}
-	public void setId(Long ID){
+	public void setId(Integer id){
 		this.id=id;
 	}
 	public String getLevelname(){
@@ -39,10 +38,10 @@ public class Completionlevel{
 	public void setLevelcomplete(Boolean levelcomplete){
 		this.levelcomplete=levelcomplete;
 	}
-	public Long getProjectid(){
+	public Integer getProjectid(){
 		return projectID;
 	}
-	public void setProjectid(Long Projectid){
+	public void setProjectid(Integer Projectid){
 		this.projectID=projectID;
 	}
 }
