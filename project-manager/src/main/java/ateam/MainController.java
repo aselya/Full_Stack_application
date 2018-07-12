@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -287,7 +288,7 @@ public class MainController {
 	
 	}
 	
-	@GetMapping(path="/upw/login")
+	@PostMapping(path="/upw/login")
 	public @ResponseBody String login(@RequestParam String un,
 			String pw) {
 		Upw u = new Upw();
