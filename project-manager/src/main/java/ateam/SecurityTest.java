@@ -8,7 +8,7 @@ import java.util.Date;
 public class SecurityTest{
 	public static String encrypt(int uid){
 		try{
-			KeyGenerator keyGen=KeyGenerator.getInstance("AES");
+			KeyGenerator keyGen=KeyGenerator.getInstance("AES/CBC/PKCS5Padding");
 			keyGen.init(256);
 			SecretKey secretKey = keyGen.generateKey();
 		
@@ -16,7 +16,7 @@ public class SecurityTest{
 			String tokenString = Integer.toString(uid)+", " +date.toString();
 			byte [] tokenInfo = tokenString.getBytes();
 			try{
-				Cipher cipher = Cipher.getInstance("AES");
+				Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
 				cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 				byte [] transformedBytes = cipher.doFinal(tokenInfo);
 				String transformation = new String(transformedBytes);
@@ -34,13 +34,13 @@ public class SecurityTest{
 	}
 	public static int decrypt(String code){
 		try{
-			KeyGenerator keyGen=KeyGenerator.getInstance("AES");
+			KeyGenerator keyGen=KeyGenerator.getInstance("AES/CBC/PKCS5Padding");
 			keyGen.init(256);
 			SecretKey secretKey = keyGen.generateKey();
 
 			Date date = new Date();
 			try{
-				Cipher cipher = Cipher.getInstance("AES");
+				Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
 				cipher.init(Cipher.DECRYPT_MODE, secretKey);
 				byte[] decodedString = cipher.doFinal(code.getBytes());
 				String s = new String(decodedString);
