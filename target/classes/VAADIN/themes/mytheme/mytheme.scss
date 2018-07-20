@@ -1,0 +1,138 @@
+// If you edit this file you need to compile the theme. See README.md for details.
+
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+//This line clears the blue border or valo theme.
+$v-focus-style: none;
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+  @include valo;
+
+  // Insert your own theme rules here
+	.sideMenuButton {
+		border: none;
+		@include box-shadow(none);
+		background: transparent;
+		background-color: #58595b;   
+	    font-size: 12pt;
+	    color: white;
+	    border: none;
+	    content: none;
+	    border-radius: 0px;
+	    background-image: none;
+	    &:hover {
+	    	background-color: #00a79d;
+    		color: white;
+	    }
+	    &:active {
+	    	@include opacity(.7);
+		    &:after {
+		    	background: transparent;
+		    }
+		}
+	}
+
+	.headerButton {
+		background-color: white; 
+	    color: #008CBA; 
+	    font-weight: bold;
+	    border: 2px solid #008CBA;
+	    transition-duration: 0.4s;
+	    background-image: none;
+	    &:hover {
+	    	background-color: #008CBA;
+    		color: white;
+	    }
+	}
+
+	.titleOnClick {
+		//white-space: pre;
+		border: none;
+		@include box-shadow(none);
+		background: transparent;
+		background-color: transparent;   
+	    font-size: 14pt;
+	    font-weight: 700;
+	    color: black;
+	    border: none;
+	    content: none;
+	    border-radius: 0px;
+	    background-image: none;
+	    &:hover {
+    		color: blue;
+	    }
+	}
+
+	.v-button {
+		border: none;
+    	outline: none;
+	}
+
+	.v-label-side_menu_title {
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 44px;
+	}
+
+	.myIssueTitle {
+		color: black;
+		text-align: left;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+	.myIssueStatus {
+		color: #575f69;
+		text-align: left;
+		font-size: 18px;
+	}
+
+	.myCommentTitle {
+		color: black;
+		text-align: left;
+		font-weight: bold;
+		font-size: 35px;
+	}
+
+	.myCommentStatus {
+		color: #575f69;
+		text-align: left;
+		font-size: 20px;
+	}
+
+	.pageNavigatorTemp {
+		color: pink;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
