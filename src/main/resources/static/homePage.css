@@ -1,0 +1,143 @@
+body {
+  font-family: sans-serif;
+  background-color: black;
+  color: #333;
+  padding: 20px 0 28px 0;
+  margin: 0;
+}
+img {
+  max-width: 50%;
+  max-height: 50%;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  margin-left: 3%;
+  width: 30%;
+}
+.column img{
+  max-width: 100%;
+  max-height: 100%;
+}
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.homepageMainListDiv{
+  display: block;
+  color: white;
+  text-align: center;
+}
+.homepageMainListUL{
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.homepageMainListUL li{
+  display: block;
+  border-color: white;
+  border-style: solid;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homepageMainListUL li img{
+  max-width: 100%;
+}
+.homepageWelcome{
+  display: block;
+  color: white;
+  text-align: center;
+}
+.homepageWeeklyMessage{
+  color: white;
+  text-align: center;
+}
+.homepageWeeklyMessage img{
+  display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+}
+ .mainMenuClass{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   border: 1px solid #e7e7e7;
+   background-color: #f3f3f3;
+}
+.mainMenuClassLi{
+  float: left;
+}
+.mainMenuClassLi a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.mainMenuClassLi:last-child {
+    border-bottom: none;
+}
+.projectULlist{
+  list-style: none;
+}
+.projectULlistTable{
+  display: projectULlistTable;   /* Allow the centering to work */
+    margin: 0 auto;
+}
+.app-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.6rem;
+  background-color: #fff;
+  max-width: 50%;
+  margin-left: 25%;
+}
+.project {
+  min-width: 40%;
+  max-width: 40%;
+  padding: 2%;
+  margin: 1% auto;
+  background-color: #fff;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 1% 1% 1% rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.project h4 {
+  margin: 0 0 6px 0;
+}
+.project-currentStatus {
+  float: left;
+  width: 40%;
+  margin-right: 15px;
+}
+.project-name {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+.typeOfProject {
+  font-size: 0.9rem;
+  color: #888;
+  vertical-align: middle;
+}
+.requirements-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 17px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.footer {
+  font-size: 0.7rem;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}

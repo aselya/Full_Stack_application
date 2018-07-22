@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Project Management</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="projectMain.css">
+  </head>
+
+  <div class="horMenu">
+    <ul class="horMenuUL">
+  <li class="horMenuLi"><a href="homePage.html">Home Page</a></li>
+  <li class="horMenuLi"><a href="https://aqueous-depths-93796.herokuapp.com/">Issue Managment</a></li>
+  <li class="horMenuLi"><a href="https://i1.wp.com/www.frc2468.org/wp-content/uploads/2017/04/Slack-Logo-1.png?resize=480%2C400">Communication Tool</a></li>
+
+
+</ul>
+  </div>
+  <body>
+
+
+
+<h2>Current Active Projects</h2>
+
+<div class="test">
+
+</div>
+
+</div>
+
+
+
+<p id="demo"></p>
+
+
+<section id = "mySection">
+
+</section>
+
+
+
+
+
+
+</body>
+
+<script>
+
+
+
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+var myObj;
+	var test = '  '
+
+
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        for (var i = 0; i < myObj.length ; i++) {
+
+ var div1 = document.createElement("div");
+ div1.className = 'div1';
+var para = document.createElement("P");
+var para2 = document.createElement("P");
+var para3 = document.createElement("P");
+
+
+var divId = "div1";
+div1.className = divId;
+        div1.id = divId;
+
+       //para.className = divId;
+       // para.id = divId;
+
+
+
+       var pElementId = divId[i].projectname;
+       pElementId = pElementId ;
+       para3.className = pElementId;
+       para3.id = pElementId;
+
+       // myPara3.id = pElementId;
+
+
+    var t = document.createTextNode("This is the project name: " + myObj[i].projectname);
+
+//document.getElementById(pElementId).innerHTML="<a href= '/"+ pElementId +"'> Requirements </a>"
+
+
+    var t2 =  document.createTextNode("\u000aThis is the createname value: " + myObj[i].createuser);
+
+
+   // para.appendChild(t);
+   // para.appendChild(t2);
+
+
+
+
+    para.appendChild(t);
+
+
+    para3.innerHTML += "<a href='"+myObj[i].projectname+"'>Go To Project</a>" ;
+    //para3.innerHTML="<a href= '/"+ pElementId +"'>go to project</a>"
+
+
+    div1.appendChild(para);
+
+    para2.appendChild(t2);
+
+    div1.appendChild(para2);
+    div1.appendChild(para3);
+
+    //document.body.appendChild(para);
+    //document.body.appendChild(para2);
+    //document.body.appendChild(div1);
+
+
+    document.getElementById("mySection").appendChild(div1);
+
+
+
+
+
+  /*
+
+       test = test + "user: "+ myObj[i].id +" project name: " + myObj[i].projectname + " createuser:" + myObj[i].createuser;
+    document.getElementById("demo").innerHTML = test + " x " + myObj[i].projectname;
+    */
+
+
+
+// var myH2 =  document.createElement('h2');
+ //var myPara1 =  document.getElementById("demo").createElement('p');
+
+
+//myH2.textContent = " project name: " + myObj[i].projectname;
+//myPara1.textContent = 'Project members: ' + myObj[i].createuser;
+
+     // document.appendChild(myH2);
+        // document.getElementById("demo").appendChild(myPara1);
+
+}
+
+
+
+
+
+
+    }
+
+
+
+};
+xmlhttp.open("GET", "https://ateam-pmb.herokuapp.com/pm/project/all", true);
+xmlhttp.send();
+
+
+<xmlns="https://ateam-pmb.herokuapp.com/pm/project/all">{"id":69,"projectname":"Project 69","createuser":["test","of","array"]}>
+
+
+</script>
+
+
+
+</html>

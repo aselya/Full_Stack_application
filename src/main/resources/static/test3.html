@@ -1,0 +1,97 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</script>
+
+
+<html>
+
+<form id="myForm"  method="get">
+    Name: <input type="text" name="projectname" required/>
+    User id (0-7): <input type="text" name="createuser" required/>
+
+    Description: <textarea name="description"></textarea>
+    <input type="submit" value="Submit Comment" onclick="sendToserver"/>
+</form>
+
+<!--
+<form id="newProject" method="get" >
+
+  <div> Enter Name of New Project: <input type="text" name="projectname" required></div>
+  <div> Enter Name of your user id an int between (1-7): <input type="text" name="createuser" required></div>
+  <div> Enter Name of your procject description: <input type="text" name="description" required></div>
+
+
+
+
+  </div>
+
+  <input id="submitButton" type="submit" value="Submit">
+
+</form>
+
+-->
+ </html>
+
+
+
+<script type="text/javascript">
+
+function sendToserver(){
+var form = document.getElementById('myForm');
+var formData = new formData(form);
+
+var xhr = new XMLHttpRequest();
+var urlBase = 'https://as-front-end3.herokuapp.com/pm/project/all/add'
+url.append(formData)
+xhr.open('GET', urlBase, true);
+xhr.open('GET', "https://as-front-end3.herokuapp.com/", true);
+//xhr.send(formData);
+
+window.location = "https://as-front-end3.herokuapp.com/";
+
+
+}
+
+
+
+
+
+
+
+/*
+
+        // wait for the DOM to be loaded
+        $(document).ready(function() {
+            // bind 'myForm' and provide a simple callback function
+            $('#myForm').ajaxForm(function() {
+              $.ajax({
+                  url:'https://as-front-end3.herokuapp.com/pm/project/add',
+                  type:'post',
+                  data:$('#myForm').serialize();
+                alert("Thank you for your comment!");
+                window.location.replace('https://as-front-end3.herokuapp.com/projectMainPage.html');
+            });
+        });
+*/
+/*
+
+$('submitButton').click(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:'https://as-front-end3.herokuapp.com/pm/project/add',
+        type:'post',
+        data:$('#myForm').serialize(),
+        success:function(){
+
+          window.location.replace('https://as-front-end3.herokuapp.com/projectMainPage.html');
+            //whatever you wanna do after the form is successfully submitted
+        }
+    });
+});
+
+
+*/
+
+
+</script>

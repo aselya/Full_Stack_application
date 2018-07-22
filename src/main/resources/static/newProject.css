@@ -1,0 +1,47 @@
+input {
+	border-bottom-style: solid;
+	border-color: grey;
+}
+
+textarea{
+	border-color: black;
+}
+
+button{
+  border-color: black;
+  
+}
+
+.newProjectBody{
+  text-align: center;
+	display: block;
+}
+
+.formWrapper{
+  min-width: 100%;
+  text-align: center;
+}
+
+.hormenu{
+  min-width: 100%;
+}
+.horMenuUL {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+.horMenuLi {
+    float: left;
+}
+
+.horMenuLi a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

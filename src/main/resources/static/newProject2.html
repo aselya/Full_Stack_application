@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Create New Project</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+  <link rel="stylesheet" href="newProject.css">
+</head>
+
+<div class="horMenu">
+  <ul class="horMenuUL">
+<li class="horMenuLi"><a href="homePage.html">Home Page</a></li>
+<li class="horMenuLi"><a href="https://aqueous-depths-93796.herokuapp.com/">Issue Managment</a></li>
+<li class="horMenuLi"><a href="https://friendlychat-1f1b0.firebaseapp.com/">Communication Tool</a></li>
+<li class="horMenuLi"><a href="projectMainPage.html">Project Managment</a></li>
+
+
+
+</ul>
+</div>
+
+
+
+<body class="newProjectBody">
+
+
+<form id="newProject" action="https://as-front-end3.herokuapp.com/pm/project/" method="get" onsubmit="myFunction()">
+<div> Enter user id: <input type="text" name="id" required></div>
+  <div> Enter Name of New Project: <input type="text" name="projectname" required></div>
+  <div> Enter Name of your user id an int between (1-7): <input type="text" name="createuser" required></div>
+
+
+
+  </div>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<script>
+
+
+var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+xmlhttp.open("POST", "https://as-front-end3.herokuapp.com/pm/project/all");
+xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xmlhttp.send(JSON.stringify({"id":8,"projectname":"Test it worked!","createuser":25}));
+
+var max_fields      = 15;
+var wrapperFieldMembers = $(".input_fields_wrap");
+var addMember      = $(".addMemberButton");
+var removeMember   = $(".removeMemberButton");
+var addRequirement     = $(".addMemberButton");
+var removeRequirement   = $(".removeMemberButton");
+
+
+
+//this first section controls the member adding the second function controls the
+//requirments
+$(addMember).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapperFieldMembers[0].childNodes.length;
+    if(total_fields < max_fields){
+        $(wrapperFieldMembers).append('<input type="text" name="member" class="field-long" />');
+    }
+});
+$(removeMember).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapperFieldMembers[0].childNodes.length;
+    if(total_fields>1){
+        wrapperFieldMembers[0].childNodes[total_fields-1].remove();
+    }
+});
+
+/////////////////////////////////
+
+
+var max_fields      = 15;
+var wrapperRequirementFields = $(".requirementFields");
+
+var addRequirement     = $(".addRequirementButton");
+var removeRequirement   = $(".removeRequirementButton");
+
+
+
+//this first section controls the member adding the second function controls the
+//requirments
+$(addRequirement).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapperRequirementFields[0].childNodes.length;
+    if(total_fields < max_fields){
+        $(wrapperRequirementFields).append('<input type="text" name="requirement" class="field-long" />');
+    }
+});
+$(removeRequirement).click(function(e){
+    e.preventDefault();
+    var total_fields = wrapperRequirementFields[0].childNodes.length;
+    if(total_fields>1){
+        wrapperRequirementFields[0].childNodes[total_fields-1].remove();
+    }
+});
+
+
+///////
+/*<div class="addNewMember">
+
+  <button type="button" class="addMemberButton">Add Member</button>
+  <button type="button" class="removeMemberButton">Remove Last Member</button>
+  <div class="input_fields_wrap">
+  <input type="text" name="Member" class="field-long" />
+
+</div>
+
+<div class="addNewRequirments">
+
+  <button type="button" class="addRequirementButton">Add Requirments</button>
+    <button type="button" class="removeRequirementButton">Remove Last Requirment</button>
+    <div class="requirementFields">
+    <input type="text" name="requirement" class="field-long" />
+
+</div> */
+
+
+
+
+//////////////////////////////
+function myFunction() {
+    alert("The new project has been created");
+
+}
+</script>
+
+</body>
+</html>
