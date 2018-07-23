@@ -318,20 +318,20 @@ public class MainController {
 						n.setProjectname(projectname);
 						n.setCreateuser(createuser);
 						projectRepository.save(n);
-						return "1";
+						return "Successful";
 					}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 
 	@GetMapping(path="/project/delete")
 	public @ResponseBody String deleteProject (@RequestParam Integer id) {
 		if(projectRepository.existsById(id)){
 			projectRepository.deleteById(id);
-			return "1";
+			return "Successful";
 			}
-		return "-1";
+		return "Unsuccessful";
 	}
 
 	@GetMapping(path="/project/update")	
@@ -346,12 +346,12 @@ public class MainController {
 						n.setProjectname(projectname);
 						n.setCreateuser(createuser);
 						projectRepository.save(n);	
-						return "1";
+						return "Successful";
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	@GetMapping(path="project/find")
 	public @ResponseBody Optional<Project> findProject(@RequestParam Integer id){
@@ -379,19 +379,19 @@ public class MainController {
 				n.setLevelcomplete(false);
 				n.setProjectid(projectID);
 				completionlevelRepository.save(n);
-				return "1";
+				return "Successful";
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/completionlevel/delete")
 	public @ResponseBody String deleteCompletionLevel (@RequestParam Integer id) {
 		if (completionlevelRepository.existsById(id)){
 			completionlevelRepository.deleteById(id);
-			return "1";
+			return "Successful";
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/completionlevel/update")
@@ -409,13 +409,13 @@ public class MainController {
 							n.setLevelcomplete(levelcomplete);
 							n.setProjectid(projectID);
 							completionlevelRepository.save(n);
-							return "1";
+							return "Successful";
 						}
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/completionlevel/all")
@@ -436,21 +436,21 @@ public class MainController {
 						n.setDescription(description);
 						n.setProjectid(projectID);
 						elementRepository.save(n);
-						return "1";
+						return "Successful";
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/element/delete")
 	public @ResponseBody String deleteElement (@RequestParam Integer id) {
 		if (elementRepository.existsById(id)){
 			elementRepository.deleteById(id);
-			return "1";
+			return "Successful";
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/element/update")
@@ -468,13 +468,13 @@ public class MainController {
 							n.setDescription(description);
 							n.setProjectid(projectID);
 							elementRepository.save(n);
-							return "1";
+							return "Successful";
 						}
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/element/all")
@@ -495,21 +495,21 @@ public class MainController {
 						n.setDescription(description);
 						n.setProjectid(projectID);
 						requirementRepository.save(n);
-						return "1";
+						return "Successful";
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/requirement/delete")
 	public @ResponseBody String deleteRequirement (@RequestParam Integer id) {
 		if (requirementRepository.existsById(id)){
 			requirementRepository.deleteById(id);
-			return "1";
+			return "Successful";
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/requirement/update")
@@ -527,13 +527,13 @@ public class MainController {
 							n.setDescription(description);
 							n.setProjectid(projectID);
 							requirementRepository.save(n);
-							return "1";
+							return "Successful";
 						}
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/requirement/all")
@@ -561,22 +561,22 @@ public class MainController {
 							n.setComplete(false);
 							n.setLevel(level);
 							taskRepository.save(n);
-							return "1";
+							return "Successful";
 						}
 					}
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/task/delete")
 	public @ResponseBody String deleteTask (@RequestParam Integer id) {
 		if(taskRepository.existsById(id)){
 			taskRepository.deleteById(id);
-			return "1";
+			return "Successful";
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/task/update")
@@ -601,7 +601,7 @@ public class MainController {
 									n.setComplete(complete);
 									n.setLevel(level);
 									taskRepository.save(n);
-									return "1";
+									return "Successful";
 								}
 							}
 						}
@@ -609,7 +609,7 @@ public class MainController {
 				}
 			}
 		}
-		return "-1";
+		return "Unsuccessful";
 	}
 	
 	@GetMapping(path="/task/all")
