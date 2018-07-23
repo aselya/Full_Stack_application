@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Project Management</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <div class="horMenu">
+    <ul class="horMenuUL">
+  <li class="horMenuLi"><a href="#home">Home Page</a></li>
+  <li class="horMenuLi"><a href="#issue">Issue Managment</a></li>
+  <li class="horMenuLi"><a href="#communication">Communication Tool</a></li>
+
+
+</ul>
+  </div>
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+    <script>
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+    var requestURL = 'https://raw.githubusercontent.com/aselya/software_engineering/master/jsonTesting.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'text';
+    request.send();
+    request.onload = function() {
+      var projectObjectText = request.response;
+      var superprojectVar = JSON.parse(projectObjectText);
+      populateHeader(superprojectVar);
+      showProjects(superprojectVar);
+    }
+    function populateHeader(jsonObj) {
+      var myH1 = document.createElement('h1');
+      myH1.textContent = jsonObj['TeamName'];
+      header.appendChild(myH1);
+      var myPara = document.createElement('p');
+      myPara.textContent = 'location: ' + jsonObj['location'] + ' // Formed: ' + jsonObj['formed'];
+      header.appendChild(myPara);
+    }
+    function showProjects(jsonObj) {
+      var projectVar = jsonObj['members'];
+      for(var i = 0; i < projectVar.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+        var myList = document.createElement('ul');
+        myH2.textContent = projectVar[i].projectName;
+        myPara1.textContent = 'Project members: ' + projectVar[i].projectMembers;
+        myPara2.textContent = 'Age: ' + projectVar[i].age;
+        myPara3.textContent = 'Requirements';
+        var requirementsList = projectVar[i].requirements;
+        for(var j = 0; j < requirementsList.length; j++) {
+          var listItem = document.createElement('li');
+          listItem.textContent = requirementsList[j];
+          myList.appendChild(listItem);
+        }
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+        section.appendChild(myArticle);
+      }
+    }
+    </script>
+  </body>
+</html>
