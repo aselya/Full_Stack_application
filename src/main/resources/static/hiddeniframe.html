@@ -47,7 +47,8 @@ function urlCreator(){
 var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
 //var descriptionInput = document.getElementByName("description");
 //var elementnameInput = document.getElementByName("elementname");
-var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?elementorder=1&projectID="+ id + $('form').serialize();
+//var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?elementorder=1&projectID="+ id + "&" + $('form').serialize();
+var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?" + $('form').serialize();
 
 // "&description="+
 //document.getElementsByName("description")[0].value+"&elementname="+ document.getElementsByName("elementname")[0].value;
@@ -61,16 +62,24 @@ return newUrl;
 $('#create').click(function(){
   var file_src =urlCreator();
 alert('new element created');
-alert( 'this is the url' + file_src);
 $('<iframe>')
   .attr('src', file_src)
-  .attr('height', 0)
-  .attr('width', 0)
+  .attr('height', 100)
+  .attr('width', 100)
   .appendTo('#iframe_div');
-  location.reload(true);
+  //location.reload(true);
+
+  alert( 'this is the url' + file_src);
+
+
+  reloadPage();
 
 });
 
+function reloadPage (){
+location.reload(true);
+
+}
 
 
 </script>
