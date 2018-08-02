@@ -67,7 +67,7 @@
       //alert("value for rec" + document.getElementById('requirementorder').value);
 
       </script>
-      <input type="button" id="create" value="Create New Element">
+      <input type="button" id="create" value="Create New Project">
       </form>
       </div>
       <div id="iframe_div">
@@ -229,7 +229,7 @@ return newUrl;
 
 $('#create').click(function(){
   var file_src =urlCreator();
-alert('new element created');
+alert('new project created');
 $('<iframe>')
   .attr('src', file_src)
   .attr('height', 100)
@@ -276,7 +276,7 @@ function deleteFunction(id){
     .appendTo('#iframe_div');
 
 
-alert('element deleted ');
+alert('project deleted ');
     reloadPage().stopPropagation();
 
 
