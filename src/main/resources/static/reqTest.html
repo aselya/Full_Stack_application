@@ -164,7 +164,7 @@ div1.className = "projectDiv";
     para4.id = buttonID;
     para4.value=myObj[i].id;
     var idForDelete = myObj[i].id;
-    alert("id for delete: " + idForDelete);
+    //alert("id for delete: " + idForDelete);
     //para4.addEventListener("click", function(){deleteFunction( pElementId );} , false);
     para4.onclick = function() { deleteFunction( idForDelete ); };
 
@@ -220,14 +220,14 @@ var url_string3 = window.location.href; //window.location.href
 var url3 = new URL(url_string3);
 var urlCreatorID = url3.searchParams.get("projectID");
 var urlCreatorAuth = url3.searchParams.get("auth");
-alert("urlCreatorAuth = " + urlCreatorAuth );
-alert("urlCreatorID = " + urlCreatorID);
+//alert("urlCreatorAuth = " + urlCreatorAuth );
+//alert("urlCreatorID = " + urlCreatorID);
 
 
 var newUrl = "https://as-front-end3.herokuapp.com/pm/requirement/add?" + $('form').serialize() ;
 //url with security
 //var newUrl = "https://as-front-end3.herokuapp.com/pm/requirement/add?" + $('form').serialize() + "&auth=" + urlCreatorAuth;
-alert("url to be sent " + newUrl);
+//alert("url to be sent " + newUrl);
 
 return newUrl;
 }
@@ -237,7 +237,7 @@ return newUrl;
 function urlDelete( id ){
 //var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
 var newUrl = "https://as-front-end3.herokuapp.com/pm/requirement/delete?id="+ id ;
-alert("url for delete" + newUrl);
+//alert("url for delete" + newUrl);
 return newUrl;
 }
 
@@ -246,7 +246,7 @@ function deleteFunction(id){
   $('#delete').click(function(e){
 
   var file_src =urlDelete(id);
-  alert( 'this is the url' + file_src);
+ // alert( 'this is the url' + file_src);
 
   $('<iframe>')
     .attr('src', file_src)
@@ -283,7 +283,7 @@ $('<iframe>')
   .appendTo('#iframe_div');
   //location.reload(true);
 
-  alert( 'this is the url' + file_src);
+ // alert( 'this is the url' + file_src);
 
 
 
