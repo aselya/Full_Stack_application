@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Project Management</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="projectMain.css">
+  </head>
+
+
+  <body>
+
+<h2>Current Element Projects</h2>
+
+<p id="demo"></p>
+
+
+<section id = "mySection">
+
+</section>
+
+
+</div>
+
+
+
+
+<section id="mySection">
+  <div class="projectDiv">
+  <button type="button" id="recButton" name="button">Back to requirments</button>
+  <script type="text/javascript">
+    var url_string4 = window.location.href; //window.location.href
+    var url = new URL(url_string4);
+    var projectID4 = url.searchParams.get("projectID");
+
+    document.getElementById('recButton').onclick = function(){
+      location.href = "https://as-front-end3.herokuapp.com/pm/requirement/all?projectID="+ projectID4;
+    };
+
+  </script>
+</div>
+</section>
+
+
+
+
+
+<section id = "mySection">
+<div class="projectDiv">
+<form class="" action="index.html" method="post">
+<div class="newElementForm">
+  Enter Name the title of your element:
+  <input type="text" name="elementname" value="" required>
+</div>
+<div class="newElementForm">
+  Enter Name description of element:
+  <input type="text" name="description" value="" required>
+
+</div>
+<input type="hidden" name="elementorder" id="elementorder" value="1">
+<input type="hidden" id="projectID" name="projectID" value="" />
+<script>
+
+var url_string = window.location.href; //window.location.href
+var url = new URL(url_string);
+var urlCreatorAuth = url.searchParams.get("auth");
+var urlProjectID = url.searchParams.get("projectID");
+var urlElementOrder = url.searchParams.get("elementorder");
+
+
+document.getElementById('projectID').value= urlProjectID;
+document.getElementById('elementorder').value= urlElementOrder;
+
+
+</script>
+<input type="button" id="create" value="Create New Element">
+</form>
+</div>
+<div id="iframe_div">
+
+</div>
+</section>
+
+
+
+    <script>
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+var myObj;
+	var test = '  ';
+  var selectedID = 4;
+  var authenticationToken =1;
+
+
+  var url_string = window.location.href; //window.location.href
+  var url1 = new URL(url_string);
+  var urlCreatorAuth1 = url.searchParams.get("auth");
+  var selectedID = url.searchParams.get("projectID");
+  var urlElementOrder1 = url.searchParams.get("elementorder");
+
+//authenticationToken = window.location.href.split("auth=")[1];
+//selectedID = window.location.href.split("projectID=")[1];
+  //selectedID = urlParam('projectid');
+
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        for (var i = 0; i < myObj.length ; i++) {
+
+          {if (myObj[i].projectid == selectedID) {
+            {if (myObj[i].elementorder == urlElementOrder1)
+
+
+ var div1 = document.createElement("div");
+ div1.className = 'div1';
+var para = document.createElement("P");
+var para2 = document.createElement("P");
+var para3 = document.createElement("P");
+var para4 = document.createElement("BUTTON");
+
+
+var divId = myObj[i].id;
+div1.className = "projectDiv";
+        div1.id = divId;
+
+
+       var pElementId = myObj[i].id;
+       para3.className = pElementId;
+       para3.id = pElementId;
+
+
+
+    var t = document.createTextNode("This is the projectid name: " + myObj[i].projectid);
+
+
+
+    var t2 =  document.createTextNode("This is the description value: " + myObj[i].description);
+    var t3 =  document.createTextNode("Delete Element");
+
+    para.appendChild(t);
+
+
+    div1.appendChild(para);
+
+    para2.appendChild(t2);
+
+    para4.appendChild(t3);
+    var buttonID = "delete";
+    para4.id = buttonID;
+    para4.value=myObj[i].id;
+    para4.addEventListener("click", deleteFunction(myObj[i].id), false);
+
+
+    div1.appendChild(para2);
+    div1.appendChild(para3);
+    div1.appendChild(para4);
+
+
+
+    document.getElementById("mySection").appendChild(div1);
+}
+}
+}
+}
+
+
+    }
+};
+xmlhttp.open("GET", "https://as-front-end3.herokuapp.com/pm/element/all", true);
+xmlhttp.send();
+
+function urlParam(projectid, w){
+    w = w || window;
+    var rx = new RegExp('[\&|\?]'+projectid+'=([^\&\#]+)'),
+        val = w.location.search.match(rx);
+    return !val ? '':val[1];
+}
+
+////////////// iframe
+
+var file_src = "https://as-front-end3.herokuapp.com/pm/element/add?"
+
+
+
+
+function urlCreator(){
+
+//var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
+var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?" + $('form').serialize();
+alert("new url" + newUrl);
+return newUrl;
+}
+
+//var file_src = urlCreator();
+
+function urlDelete( id ){
+//var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
+var newUrl = "https://as-front-end3.herokuapp.com/pm/element/delete?id="+ id ;
+return newUrl;
+}
+
+function deleteFunction(id){
+
+  $('#delete').click(function(e){
+
+  var file_src =urlDelete(id);
+  alert( 'this is the url' + file_src);
+
+  $('<iframe>')
+    .attr('src', file_src)
+    .attr('height', 100)
+    .attr('width', 100)
+    .appendTo('#iframe_div');
+
+
+alert('element deleted ');
+    reloadPage().stopPropagation();
+
+
+
+    //reloadPage();
+
+  });
+
+}
+
+
+
+
+
+
+
+///////////
+$('#create').click(function(){
+  var file_src =urlCreator();
+alert('new element created');
+$('<iframe>')
+  .attr('src', file_src)
+  .attr('height', 100)
+  .attr('width', 100)
+  .appendTo('#iframe_div');
+  //location.reload(true);
+
+  alert( 'this is the url' + file_src);
+
+
+
+  reloadPage();
+
+
+});
+
+function reloadPage (){
+location.reload(true);
+
+
+}
+
+    </script>
+  </body>
+</html>
