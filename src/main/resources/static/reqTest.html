@@ -128,7 +128,7 @@ div1.className = "projectDiv";
     var url = new URL(url_string);
     var urlCreatorAuth = url.searchParams.get("auth");
     var urlProjectID = url.searchParams.get("projectID");
-    var urlForElement = "file:///Users/aarondavidselya@gmail/Desktop/heroku_frontend/as-front-end3/src/main/resources/static/elementDeleteButtonTest.html?projectID=" + urlProjectID + "&auth=" + urlCreatorAuth + "&elementorder=" + pElementId;
+    var urlForElement = "https://as-front-end3.herokuapp.com/elementDeleteButtonTest.html?projectID=" + urlProjectID + "&auth=" + urlCreatorAuth + "&elementorder=" + pElementId;
 
     para5.innerHTML += "<a href='"+urlForElement+"'>Go To Elements</a>" ;
 
