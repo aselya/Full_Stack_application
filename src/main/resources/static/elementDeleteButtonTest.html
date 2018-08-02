@@ -38,21 +38,7 @@
 
 
 
-<section id="mySection">
-  <div class="projectDiv">
-  <button type="button" id="recButton" name="button">Back to requirments</button>
-  <script type="text/javascript">
-    var url_string4 = window.location.href; //window.location.href
-    var url = new URL(url_string4);
-    var projectID4 = url.searchParams.get("projectID");
 
-    document.getElementById('recButton').onclick = function(){
-      location.href = "https://as-front-end3.herokuapp.com/reqTest.html?projectID="+ projectID4;
-    };
-
-  </script>
-</div>
-</section>
 
 
 
@@ -94,6 +80,21 @@ document.getElementById('elementorder').value= urlElementOrder;
 </div>
 </section>
 
+	<section id="mySection">
+  <div class="projectDiv">
+  <button type="button" id="recButton" name="button">Back to requirments</button>
+  <script type="text/javascript">
+    var url_string4 = window.location.href; //window.location.href
+    var url = new URL(url_string4);
+    var projectID4 = url.searchParams.get("projectID");
+
+    document.getElementById('recButton').onclick = function(){
+      location.href = "https://as-front-end3.herokuapp.com/reqTest.html?projectID="+ projectID4;
+    };
+
+  </script>
+</div>
+</section>
 
 
     <script>
