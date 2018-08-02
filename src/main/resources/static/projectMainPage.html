@@ -215,7 +215,7 @@ var url_string3 = window.location.href; //window.location.href
 var url3 = new URL(url_string3);
 var urlCreatorID = url3.searchParams.get("projectID");
 var urlCreatorAuth = url3.searchParams.get("auth");
-alert("urlCreatorAuth = " + urlCreatorAuth );
+//alert("urlCreatorAuth = " + urlCreatorAuth );
 //alert("urlCreatorID = " + urlCreatorID);
 
 
@@ -237,7 +237,7 @@ $('<iframe>')
   .appendTo('#iframe_div');
   //location.reload(true);
 
-  alert( 'this is the url' + file_src);
+  //alert( 'this is the url' + file_src);
 
 
 
@@ -267,7 +267,7 @@ function deleteFunction(id){
 //  $('#delete').click(function(e){
 
   var file_src =urlDelete(id);
-  alert( 'this is the url' + file_src);
+  //alert( 'this is the url' + file_src);
 
   $('<iframe>')
     .attr('src', file_src)
