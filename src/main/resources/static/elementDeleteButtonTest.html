@@ -201,7 +201,7 @@ function urlCreator(){
 
 //var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
 var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?" + $('form').serialize();
-alert("new url" + newUrl);
+//alert("new url" + newUrl);
 return newUrl;
 }
 
@@ -218,7 +218,7 @@ function deleteFunction(id){
   $('#delete').click(function(e){
 
   var file_src =urlDelete(id);
-  alert( 'this is the url' + file_src);
+  //alert( 'this is the url' + file_src);
 
   $('<iframe>')
     .attr('src', file_src)
@@ -255,7 +255,7 @@ $('<iframe>')
   .appendTo('#iframe_div');
   //location.reload(true);
 
-  alert( 'this is the url' + file_src);
+  //alert( 'this is the url' + file_src);
 
 
 
