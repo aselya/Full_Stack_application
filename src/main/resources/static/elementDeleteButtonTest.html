@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link rel="stylesheet" href="projectMain.css">
   </head>
-	
+	<!--The main horizontal menue used across pages in pm tool-->
+
 <div class="horMenu">
     <ul class="horMenuUL">
   <li class="horMenuLi"><a href="homePage.html">Home Page</a></li>
@@ -35,14 +36,7 @@
 
 </div>
 
-
-
-
-
-
-
-
-
+	<!--This section contains the form used to create a new element-->
 
 <section id = "mySection">
 <div class="projectDiv">
@@ -60,13 +54,17 @@
 <input type="hidden" id="projectID" name="projectID" value="" />
 <script>
 
+		
+	//gets url from browser
+	//turn url into url object
+	//isolate relevent parameters
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var urlCreatorAuth = url.searchParams.get("auth");
 var urlProjectID = url.searchParams.get("projectID");
 var urlElementOrder = url.searchParams.get("elementorder");
 
-
+	//use values from url for setting values in form
 document.getElementById('projectID').value= urlProjectID;
 document.getElementById('elementorder').value= urlElementOrder;
 
@@ -87,7 +85,7 @@ document.getElementById('elementorder').value= urlElementOrder;
     var url_string4 = window.location.href; //window.location.href
     var url = new URL(url_string4);
     var projectID4 = url.searchParams.get("projectID");
-
+	//function gets called dynamically gernerating href to appropriate level
     document.getElementById('recButton').onclick = function(){
       location.href = "https://as-front-end3.herokuapp.com/reqTest.html?projectID="+ projectID4;
     };
@@ -98,7 +96,7 @@ document.getElementById('elementorder').value= urlElementOrder;
 
 
     <script>
-
+//call that gets the information from the database
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 var myObj;
@@ -106,25 +104,22 @@ var myObj;
   var selectedID = 4;
   var authenticationToken =1;
 
-
+	//same utilization of url objects above
   var url_string = window.location.href; //window.location.href
   var url1 = new URL(url_string);
-  var urlCreatorAuth1 = url.searchParams.get("auth");
+  var urlCreatorAuth1 = url.searchParams.get("auth"); //passes login token
   var selectedID = url.searchParams.get("projectID");
   var urlElementOrder1 = url.searchParams.get("elementorder");
 
-//authenticationToken = window.location.href.split("auth=")[1];
-//selectedID = window.location.href.split("projectID=")[1];
-  //selectedID = urlParam('projectid');
 
     if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
         for (var i = 0; i < myObj.length ; i++) {
-
+	//2 for loops that get the correct elements assigned to the requirment of the project
           {if (myObj[i].projectid == selectedID) {
             {if (myObj[i].elementorder == urlElementOrder1)
 
-
+//html element creation
  var div1 = document.createElement("div");
  div1.className = 'div1';
 var para = document.createElement("P");
@@ -132,7 +127,7 @@ var para2 = document.createElement("P");
 var para3 = document.createElement("P");
 var para4 = document.createElement("BUTTON");
 
-
+//assigning ID
 var divId = myObj[i].id;
 div1.className = "projectDiv";
         div1.id = divId;
@@ -152,24 +147,18 @@ div1.className = "projectDiv";
     var t3 =  document.createTextNode("Delete Element");
 
     para.appendChild(t);
-
-
     div1.appendChild(para);
-
     para2.appendChild(t2);
-
     para4.appendChild(t3);
     var buttonID = "delete";
     para4.id = buttonID;
     para4.value=myObj[i].id;
+	     //listener for deleting element
     para4.addEventListener("click", deleteFunction(myObj[i].id), false);
-
 
     div1.appendChild(para2);
     div1.appendChild(para3);
     div1.appendChild(para4);
-
-
 
     document.getElementById("mySection").appendChild(div1);
 }
@@ -180,39 +169,33 @@ div1.className = "projectDiv";
 
     }
 };
+	    //url call to get all elments
 xmlhttp.open("GET", "https://as-front-end3.herokuapp.com/pm/element/all", true);
 xmlhttp.send();
 
-function urlParam(projectid, w){
-    w = w || window;
-    var rx = new RegExp('[\&|\?]'+projectid+'=([^\&\#]+)'),
-        val = w.location.search.match(rx);
-    return !val ? '':val[1];
-}
 
-////////////// iframe
+
+// iframe used to send GET request to update database
+	    //refresh used to update information user created
 
 var file_src = "https://as-front-end3.herokuapp.com/pm/element/add?"
 
-
-
-
+	//creates url for get request to create a new element
 function urlCreator(){
 
-//var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
 var newUrl = "https://as-front-end3.herokuapp.com/pm/element/add?" + $('form').serialize();
 //alert("new url" + newUrl);
 return newUrl;
 }
 
-//var file_src = urlCreator();
-
+	//creates url for get request to delete an existing element
 function urlDelete( id ){
 //var id = document.getElementById('projectID').value = window.location.href.split("=")[1];
 var newUrl = "https://as-front-end3.herokuapp.com/pm/element/delete?id="+ id ;
 return newUrl;
 }
 
+	    //function that uses delete listener
 function deleteFunction(id){
 
   $('#delete').click(function(e){
@@ -226,7 +209,7 @@ function deleteFunction(id){
     .attr('width', 100)
     .appendTo('#iframe_div');
 
-
+//reloads page and alerts user
 alert('element deleted ');
     reloadPage().stopPropagation();
 
@@ -244,7 +227,7 @@ alert('element deleted ');
 
 
 
-///////////
+//same structure as delete but it creates
 $('#create').click(function(){
   var file_src =urlCreator();
 alert('new element created');
